@@ -11,7 +11,7 @@ BGO is modelled around two classes:
 - **Account**  that can be representd with a bubble 
 - **BubbleGraph** that is normally represented as blob of bubbles
 
-BGO is expressed in a [owl file](bgo.owl) serialized as RDF xml. You can edit the file by hand or using [Protégé](httpsbgo://protege.stanford.edu/)
+BGO is expressed in a [owl file](bgo.owl) serialized as RDF xml. You can edit the file by hand or using [ProtÃ©gÃ©](httpsbgo://protege.stanford.edu/)
 
 Note that BGO objective is to define the data model for a data visualization tool, NOT the meaning of the represented data.
 An a Account can be used to visualize a Financtial Report fact or any versionable quantitative value. The data semantic should be linked using *dct:source propery*.
@@ -108,4 +108,4 @@ Note that the visualization application, together with BGO, should recognize mai
 - [dct:date](http://dublincore.org/documents/dcmi-terms/#terms-date) A point or period of time associated with an event in the lifecycle of the resource.
 - [dct:source](http://dublincore.org/documents/dcmi-terms/#terms-source) A related resource from which the described resource is derived.
 
-All Dublin Core attributes should gave cardinality 0 or 1. If a Dublin Core term is not define, an application level default isused.
+All Dublin Core attributes should have cardinality 0 or 1. If a Dublin Core term is not defined, an application level default should be used.
