@@ -26,7 +26,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://linkeddata.center/loadmap-bgo/v1">
-        <rdfs:seeAlso rdf:resource="https://github.com/linkeddatacenter/BOTK-fr"/>
+        <rdfs:seeAlso rdf:resource="https://github.com/linkeddatacenter/LODMAP-ontologies"/>
         <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dc:subject xml:lang="en">Bubble Graph Ontology vocabulary</dc:subject>
         <owl:versionInfo>V 1.0.0 Release 2018-11-20</owl:versionInfo>
