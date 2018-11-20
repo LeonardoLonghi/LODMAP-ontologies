@@ -1,7 +1,7 @@
 Bubble Graph Ontology (BGO)
 ==========================
 
-The Bubble Graph Ontology is a data model suitable to visualize **Account**s in a dataset as a blob of **Bubble**s in a **BubbleGraph". The bubble area is, more or less proportional, to the account value.  
+The Bubble Graph Ontology is a data model suitable to visualize **Account**s as a blob of **Bubble**s. The bubble area is, more or less proportional, to the account value.  
 
 The namespace for BGO is *http://linkeddata.center/lodmap-bgo/v1#*
 
@@ -14,9 +14,9 @@ BGO is modelled around two classes:
 BGO is expressed in a [owl file](bgo.owl) serialized as RDF xml. You can edit the file by hand or using [Protégé](httpsbgo://protege.stanford.edu/)
 
 Note that BGO objective is to define the data model for a data visualization tool, NOT the meaning of the represented data.
-An a Account can be used to visualize a Financtial Report fact or any versionable quantitative value. The semantic should be linked using *dct:source propery*.
+An a Account can be used to visualize a Financtial Report fact or any versionable quantitative value. The data semantic should be linked using *dct:source propery*.
 
-This is an example of a linked data resource containing a bgo:BubbleGraph :
+This is an example of a linked data resource containing a bgo:BubbleGraph specification:
 
 ```
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -32,7 +32,7 @@ This is an example of a linked data resource containing a bgo:BubbleGraph :
         <accounts#p1>,
         <accounts#p2>,
         <accounts#p3>;
-    bgo:partitionList ( 
+    bgo:partitionOrderedList ( 
         <accounts#p1>,
         <accounts#p2>,
         <accounts#p3>

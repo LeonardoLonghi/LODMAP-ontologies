@@ -1,251 +1,286 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+<rdf:RDF xmlns="http://linkeddata.center/loadmap-bgo/v1#"
+     xml:base="http://linkeddata.center/loadmap-bgo/v1"
+     xmlns:dpo="http://dbpedia.org/ontology/"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:powder-s="http://www.w3.org/2007/05/powder-s#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
-    <Prefix name="bgo" IRI="http://linkeddata.center/loadmap-bgo/v1#"/>
-    <Prefix name="dct" IRI="http://purl.org/dc/terms/"/>
-    <Prefix name="dpo" IRI="http://dbpedia.org/ontology/"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="dcat" IRI="http://www.w3.org/ns/dcat#"/>
-    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
-    <Prefix name="prov" IRI="http://www.w3.org/ns/prov#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
-    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
-    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
-    <Prefix name="void" IRI="http://rdfs.org/ns/void#"/>
-    <Prefix name="terms" IRI="http://open.vocab.org/terms/"/>
-    <Prefix name="interval" IRI="http://reference.data.gov.uk/def/intervals/"/>
-    <Prefix name="powder-s" IRI="http://www.w3.org/2007/05/powder-s#"/>
-    <Prefix name="sdmx-attribute" IRI="http://purl.org/linked-data/sdmx/2009/attribute#"/>
-    <Declaration>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="bgo:partitionLabel"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="bgo:previousValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="bgo:amount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="bgo:label"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="bgo:Amount"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="bgo:um"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="bgo:partitionList"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
-    </Declaration>
-    <SubClassOf>
-        <Class abbreviatedIRI="bgo:Amount"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="bgo:amount"/>
-            <Datatype abbreviatedIRI="xsd:decimal"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
-        <ObjectMinCardinality cardinality="0">
-            <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
-            <Class abbreviatedIRI="bgo:Amount"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
-        <ObjectMinCardinality cardinality="0">
-            <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
-            <Class abbreviatedIRI="bgo:Amount"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-        <Class abbreviatedIRI="bgo:Amount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="bgo:previousValue"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-        <ObjectMinCardinality cardinality="0">
-            <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
-            <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
-        </ObjectMinCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="bgo:um"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-        <DataMaxCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="bgo:partitionList"/>
-            <Datatype abbreviatedIRI="xsd:anyURI"/>
-        </DataMaxCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="bgo:label"/>
-            <Datatype abbreviatedIRI="xsd:string"/>
-        </DataExactCardinality>
-    </SubClassOf>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
-    </FunctionalObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
-        <Class abbreviatedIRI="bgo:Amount"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
-        <Class abbreviatedIRI="bgo:Amount"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-    </ObjectPropertyRange>
-    <FunctionalDataProperty>
-        <DataProperty abbreviatedIRI="bgo:partitionList"/>
-    </FunctionalDataProperty>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="bgo:amount"/>
-        <Class abbreviatedIRI="bgo:Amount"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="bgo:label"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="bgo:partitionList"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="bgo:previousValue"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty abbreviatedIRI="bgo:um"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="bgo:partitionLabel"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="bgo:amount"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="bgo:label"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="bgo:partitionList"/>
-        <Datatype abbreviatedIRI="xsd:anyURI"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="bgo:previousValue"/>
-        <Datatype abbreviatedIRI="xsd:decimal"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty abbreviatedIRI="bgo:um"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="bgo:partitionLabel"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <AbbreviatedIRI>bgo:um</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">unit of measure</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A jerarchic path description</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>bgo:partitionLabel</IRI>
-        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a string that refers to a partition label defined in the bubble graph</Literal>
-    </AnnotationAssertion>
-</Ontology>
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:bgo="http://linkeddata.center/loadmap-bgo/v1#"
+     xmlns:qb="http://purl.org/linked-data/cube#"
+     xmlns:sdmx-measure="http://purl.org/linked-data/sdmx/2009/measure#"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://open.vocab.org/terms/"
+     xmlns:sdmx-code="http://purl.org/linked-data/sdmx/2009/code#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:interval="http://reference.data.gov.uk/def/intervals/"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://linkeddata.center/loadmap-bgo/v1">
+        <rdfs:seeAlso rdf:resource="https://github.com/linkeddatacenter/BOTK-fr"/>
+        <dct:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dc:subject xml:lang="en">Bubble Graph Ontology vocabulary</dc:subject>
+        <owl:versionInfo>V 1.0.0 Release 2018-11-20</owl:versionInfo>
+        <foaf:homepage rdf:resource="http://linkeddata.center/lodmap-bgo"/>
+        <dc:title xml:lang="en">LODMAP2D Bubble Graph Ontology</dc:title>
+        <dc:creator xml:lang="en">Enrico Fagnoni enrico@linkeddata.center</dc:creator>
+        <dc:description xml:lang="en">The Bubble Graph Ontology is a data model suitable to visualize Accounts as a blob of Bubbles.</dc:description>
+        <rdfs:label xml:lang="en">BGO vocabulary</rdfs:label>
+        <dc:rights xml:lang="en">The BGO ontology is available under the Creative Commons Attribution 4.0 Unported license; see http://creativecommons.org/licenses/by/4.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement &quot;This work is based on the BGO ontology, developed by Enrico Fagnoni&quot; and link back to http://linkeddata.center/</dc:rights>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string">
+        <rdfs:comment xml:lang="en">A jerarchic path description</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#:hasPart">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+        <rdfs:range rdf:resource="http://linkeddata.center/loadmap-bgo/v1#Amount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:isVersionOf -->
+
+    <owl:ObjectProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+        <rdfs:range rdf:resource="http://linkeddata.center/loadmap-bgo/v1#Amount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:partition -->
+
+    <owl:ObjectProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#:partition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+        <rdfs:range rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph -->
+
+    <owl:ObjectProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+        <rdfs:range rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#amount -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#amount">
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#Amount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#label -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#label">
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#partitionLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#partitionLabel">
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">a string that refers to a partition label defined in the bubble graph</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#partitionOrderedList -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#partitionOrderedList">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="en">an rdfs ordered list</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#previousValue -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#previousValue">
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#um -->
+
+    <owl:DatatypeProperty rdf:about="http://linkeddata.center/loadmap-bgo/v1#um">
+        <rdfs:domain rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">unit of measure</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#Amount -->
+
+    <owl:Class rdf:about="http://linkeddata.center/loadmap-bgo/v1#Amount">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#amount"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:Account -->
+
+    <owl:Class rdf:about="http://linkeddata.center/loadmap-bgo/v1#:Account">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://linkeddata.center/loadmap-bgo/v1#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://linkeddata.center/loadmap-bgo/v1#Amount"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:Bubble -->
+
+    <owl:Class rdf:about="http://linkeddata.center/loadmap-bgo/v1#:Bubble">
+        <rdfs:subClassOf rdf:resource="http://linkeddata.center/loadmap-bgo/v1#Amount"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#previousValue"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph -->
+
+    <owl:Class rdf:about="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#um"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#partitionOrderedList"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://linkeddata.center/loadmap-bgo/v1#:Partition -->
+
+    <owl:Class rdf:about="http://linkeddata.center/loadmap-bgo/v1#:Partition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://linkeddata.center/loadmap-bgo/v1#label"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>
 
 
 
