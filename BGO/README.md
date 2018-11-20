@@ -1,7 +1,7 @@
 Bubble Graph Ontology (BGO)
 ==========================
 
-The Bubble Graph Ontology is a data model suitable to visualize **Account**s as a blob of **Bubble**s. The bubble area is, more or less proportional, to the account value.  
+The Bubble Graph Ontology is a data model suitable to visualize **Account**s as a blob of **Bubble**s. The bubble area should be, more or less, proportional to the account value. The color of the bubble depends from the change against a previous value.
 
 The namespace for BGO is *http://linkeddata.center/lodmap-bgo/v1#*
 
