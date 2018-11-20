@@ -1,12 +1,11 @@
 Bubble Graph Ontology (BGO)
 ==========================
 
-A Bubble Graph  Ontology represents a **BubbleGraph** sutable to visualize **Account**s in a dataset as a blob of **Bubble**s. The bubble area is more or less proportional to the account value.  
+The Bubble Graph Ontology is a data model suitable to visualize **Account**s in a dataset as a blob of **Bubble**s in a **BubbleGraph". The bubble area is, more or less proportional, to the account value.  
 
+The namespace for BGO is *http://linkeddata.center/lodmap-bgo/v1#*
 
-The namespace for BGO terms is *http://linkeddata.center/lodmap-bgo/v1#*
-
-The suggested prefix for the BGO vocabulary namespace is *bgo*
+The suggested prefix for the BGO namespace is *bgo*
 
 BGO is modelled around two classes:
 - **Account**  that can be representd with a bubble 
@@ -29,9 +28,13 @@ This is an example of a linked data resource containing a bgo:BubbleGraph :
     dct:description "A bubble graph representation of a balance"@en ;
     dct:source <http://example.org/resource/dataset_uri> ;
     bgo:um "EUR" ;
-    bgo:partitionList (
-        <accounts#p1>
-        <accounts#p2>
+    bgo:partition 
+        <accounts#p1>,
+        <accounts#p2>,
+        <accounts#p3>;
+    bgo:partitionList ( 
+        <accounts#p1>,
+        <accounts#p2>,
         <accounts#p3>
     )
 .
@@ -40,7 +43,7 @@ This is an example of a linked data resource containing a bgo:BubbleGraph :
     bgo:inBubbleGraph <accounts#bubbleGraph> ;
     dct:subject "this is the path" ;
     dct:title "the first fact"@en ;
-    bgo:inPartition <accounts#p1>, <accounts#p2>;
+    bgo:partitionLabel "p1", "p2";
     bgo:amount 1000.00 ;
     bgo:previousValue 800.00
 .
@@ -48,11 +51,13 @@ This is an example of a linked data resource containing a bgo:BubbleGraph :
     bgo:inBubbleGraph <accounts#bubbleGraph> ;
     dct:subject "this is the path" ;
     dct:title "the second fact"@en ;
-    bgo:inPartition <accounts#p1>, <accounts#p3>;
+    bgo:partitionLabel "p1", "p3";
     bgo:amount 10000.00 ;
     bgo:previousValue 8000.00 
 .
 
+<accounts#partitions>  
+.        
 
 <accounts#p1> bgo:label "p1"; dct:title "partition1".
 <accounts#p2> bgo:label "p2"; dct:title "partition2".
@@ -73,8 +78,7 @@ This is an example of a linked data resource representing a single  bgo:Account:
     dct:description "This is the description of the account a1" ;
     dct:subject "this is the path" ;
     dct:date "2018";
-    bgo:um "EUR";
-    bgo:inPartition <accounts#p1>, <accounts#p2>;
+    bgo:partitionLabel "p1", "p2";
     bgo:amount 1000.00 ;
     bgo:previousValue 800.00  ;
     bgo:isVersionOf
@@ -86,10 +90,22 @@ This is an example of a linked data resource representing a single  bgo:Account:
         [ dct:title "amount detail 2 of a1"; bgo:amount 600 ]
 .
 
-<accounts#bubbleGraph> bgo:um "EUR" .
+<accounts#bubbleGraph> 
+    bgo:um "EUR" ;
+    bgo:partition 
+        <accounts#p1>,
+        <accounts#p2>
+.
 <accounts#p1> bgo:label "p1"; dct:title "partition1" .
 <accounts#p2> bgo:label "p2"; dct:title "partition2" .
 ```
 
-Nothe that the visualization application, together with bgo, should recognize main doublin core elements as string value (except dct:source that must be an URI)
+Note that the visualization application, together with BGO, should recognize main Dublin Core elements:
 
+- [dct:title](http://dublincore.org/documents/dcmi-terms/#terms-title)
+- [dct:description](http://dublincore.org/documents/dcmi-terms/#terms-description)
+- [dct:subject](http://dublincore.org/documents/dcmi-terms/#terms-subject) a descriptive string that describe the topic of the resource.
+- [dct:date](http://dublincore.org/documents/dcmi-terms/#terms-date) A point or period of time associated with an event in the lifecycle of the resource.
+- [dct:source](http://dublincore.org/documents/dcmi-terms/#terms-source) A related resource from which the described resource is derived.
+
+All Dublin Core attributes should gave cardinality 0 or 1. If a Dublin Core term is not define, an application level default isused.

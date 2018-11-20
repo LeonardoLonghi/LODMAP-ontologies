@@ -5,7 +5,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <Prefix name="" IRI="http://linkeddata.center/loadmap-bgo/v1#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="bgo" IRI="http://linkeddata.center/loadmap-bgo/v1#"/>
     <Prefix name="dct" IRI="http://purl.org/dc/terms/"/>
@@ -27,13 +27,19 @@
     <Prefix name="powder-s" IRI="http://www.w3.org/2007/05/powder-s#"/>
     <Prefix name="sdmx-attribute" IRI="http://purl.org/linked-data/sdmx/2009/attribute#"/>
     <Declaration>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="bgo:partitionLabel"/>
+    </Declaration>
+    <Declaration>
         <DataProperty abbreviatedIRI="bgo:previousValue"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+        <DataProperty abbreviatedIRI="bgo:amount"/>
     </Declaration>
     <Declaration>
-        <DataProperty abbreviatedIRI="bgo:amount"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
     </Declaration>
     <Declaration>
         <DataProperty abbreviatedIRI="bgo:label"/>
@@ -61,9 +67,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
@@ -106,6 +109,13 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
+            <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
         <DataExactCardinality cardinality="1">
             <DataProperty abbreviatedIRI="bgo:um"/>
             <Datatype abbreviatedIRI="xsd:string"/>
@@ -126,44 +136,44 @@
         </DataExactCardinality>
     </SubClassOf>
     <FunctionalObjectProperty>
-        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
-        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:partition"/>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
-        <Class abbreviatedIRI="bgo:Amount"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
-        <Class abbreviatedIRI="bgo:Amount"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
@@ -192,6 +202,10 @@
         <DataProperty abbreviatedIRI="bgo:um"/>
         <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="bgo:partitionLabel"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="bgo:amount"/>
         <Datatype abbreviatedIRI="xsd:decimal"/>
@@ -201,11 +215,19 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty abbreviatedIRI="bgo:partitionList"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty abbreviatedIRI="bgo:previousValue"/>
         <Datatype abbreviatedIRI="xsd:decimal"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="bgo:um"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="bgo:partitionLabel"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <AnnotationAssertion>
@@ -217,6 +239,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
         <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A jerarchic path description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>bgo:partitionLabel</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a string that refers to a partition label defined in the bubble graph</Literal>
     </AnnotationAssertion>
 </Ontology>
 
