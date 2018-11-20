@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://linkeddata.center/loadmap-bgo/v1#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="bgo" IRI="http://linkeddata.center/loadmap-bgo/v1#"/>
+    <Prefix name="dct" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="dpo" IRI="http://dbpedia.org/ontology/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="dcat" IRI="http://www.w3.org/ns/dcat#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="prov" IRI="http://www.w3.org/ns/prov#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="void" IRI="http://rdfs.org/ns/void#"/>
+    <Prefix name="terms" IRI="http://open.vocab.org/terms/"/>
+    <Prefix name="interval" IRI="http://reference.data.gov.uk/def/intervals/"/>
+    <Prefix name="powder-s" IRI="http://www.w3.org/2007/05/powder-s#"/>
+    <Prefix name="sdmx-attribute" IRI="http://purl.org/linked-data/sdmx/2009/attribute#"/>
+    <Declaration>
+        <DataProperty abbreviatedIRI="bgo:previousValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="bgo:amount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="bgo:label"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="bgo:um"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="bgo:partitionList"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="bgo:Amount"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="bgo:amount"/>
+            <Datatype abbreviatedIRI="xsd:decimal"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+            <Class abbreviatedIRI="bgo:Amount"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+        <ObjectMinCardinality cardinality="0">
+            <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+            <Class abbreviatedIRI="bgo:Amount"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="bgo:previousValue"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="bgo:um"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="bgo:partitionList"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="bgo:label"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Account"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="bgo:inPartition"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:hasPart"/>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#:isVersionOf"/>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://linkeddata.center/loadmap-bgo/v1#::inBubbleGraph"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty abbreviatedIRI="bgo:partitionList"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="bgo:amount"/>
+        <Class abbreviatedIRI="bgo:Amount"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="bgo:label"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Partition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="bgo:partitionList"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="bgo:previousValue"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:Bubble"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="bgo:um"/>
+        <Class IRI="http://linkeddata.center/loadmap-bgo/v1#:BubbleGraph"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="bgo:amount"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="bgo:label"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="bgo:previousValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="bgo:um"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>bgo:um</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">unit of measure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>xsd:string</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A jerarchic path description</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

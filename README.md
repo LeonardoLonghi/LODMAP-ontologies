@@ -10,5 +10,5 @@ These onologies are still unpublished and in development phase:
 
 - **DMAP (Data Map Ontology)**: contains the datamodel used by the LODMAP2D georeferenced map component.
 
-All published ontologies are released under the [CC-BY license](https://creativecommons.org/licenses/by/3.0/)
+All published ontologies are released under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/)
 
