@@ -23,6 +23,8 @@ This is an example of a linked data resource containing a bgo:BubbleGraph specif
 @prefix bgo: <http://linkeddata.center/lodmap-bgo/v1#> .
 @base <http://lodmap-bgo.example.com/api/v1/> .
 
+<accounts> foaf:primaryTopicOf <accounts#bubbleGraph>.
+
 <accounts#bubbleGraph> a bgo:BubbleGraph ;
     dct:title "Balance of 2017"@en ;
     dct:description "A bubble graph representation of a balance"@en ;
@@ -70,7 +72,10 @@ This is an example of a linked data resource representing a single  bgo:Account:
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix bgo: <http://linkeddata.center/lodmap-bgo/v1#> .
 @base <http://lodmap-bgo.example.com/api/v1/> .
-    
+
+
+<account/a1> foaf:primaryTopicOf <account/a1#data>.
+
 <account/a1#data> a bgo:Account ;
     bgo:inBubbleGraph <accounts#bubbleGraph> ;
     dct:title "the first fact"@en ;
